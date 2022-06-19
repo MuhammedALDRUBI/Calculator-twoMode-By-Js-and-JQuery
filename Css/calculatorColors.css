@@ -1,0 +1,94 @@
+div.calculator-box[data-mode='dark']{
+    
+    --calculator-resultbox-bg : linear-gradient(166.34deg, #373737 0%, #252628 22.9%, #000309 100%);
+    --calculator-after-line-bg : #3D76AB;
+    --normal-text-color : #FBFBFB; 
+    --disabled-text-color : rgba(251, 251, 251, 0.5); 
+    --buttons-box-bg :  linear-gradient(to right , #102A42 , #174863);
+    --buttons-box-shadow: 0 -5px 70px 0 rgba(5, 5, 5, 0.2) inset;  
+    --operators-btn-group-bg : rgba(255, 255, 255, 0.3); 
+    --operators-btn-group-box-shadow :  0px 3px 15px rgba(0, 0, 0, 0.05); 
+    --numbers-btn-group-bg :  rgba(255, 255, 255, 0.3);
+    --dark-mode-span-bg : #003661;
+    --light-mode-span-bg : #1B6A9C;
+}
+
+div.calculator-box[data-mode='light']{ 
+    --calculator-resultbox-bg : linear-gradient(166.34deg, #FEFEFE 0%, #F9F9F9 12.84%, #F3F3F3 32.53%, #E5E5E5 100%);
+    --calculator-after-line-bg : #6396C5; 
+    --normal-text-color :rgba(55, 55, 55, 1);
+    --disabled-text-color : rgba(55, 55, 55, 0.5);
+    --buttons-box-bg :  linear-gradient(to right , #C8DFF6, #88D3FE);
+    --buttons-box-shadow: 0 -5px 70px 0 rgba(0, 0, 0, 0.1) inset;  
+    --operators-btn-group-bg :  rgba(5, 5, 5, 0.3);
+    --operators-btn-group-box-shadow : 0px 3px 15px rgba(0, 0, 0, 0.05);
+    --numbers-btn-group-bg : rgba(251, 251, 251, 1); 
+    --dark-mode-span-bg : #A9DCFD;
+    --light-mode-span-bg : #D8EEFF;
+    
+} 
+
+.operators-btn-group-bg{
+    background-color: var(--operators-btn-group-bg);
+    box-shadow: var(--operators-btn-group-box-shadow);
+}
+.operators-btn-group-bg input{
+    background-color: transparent
+}
+.numbers-btn-group-bg input{
+    background-color: var(--numbers-btn-group-bg);  
+    box-shadow: var(--operators-btn-group-box-shadow);
+}
+
+
+div.calculator-box{
+    background: var(--calculator-resultbox-bg); 
+    color:var(--normal-text-color);
+}
+
+div.calculator-box:after{ 
+    background-color: #3D76AB;
+}
+
+/* mode part */
+div.calculator-box div.mode-buttons-box span.light-mode{  
+    background:var( --light-mode-span-bg);
+}
+div.calculator-box div.mode-buttons-box span.dark-mode{  
+    background: var(--dark-mode-span-bg);
+}
+
+/* history part */
+div.calculator-box div.history {     
+    background-color:#fff;
+}
+div.calculator-box div.history > span.closeSpan{ 
+    color:#333;
+}
+
+div.calculator-box div.history > h2{ 
+    color:#333;
+}
+
+div.calculator-box div.history > div.history-box div.Equation-history-row{ 
+    background-color:#333; 
+}
+
+/* result box part */
+div.calculator-box div.result-box > div.first-row{
+    color:var(--disabled-text-color)
+}
+div.calculator-box  div.buttons-box{ 
+    background: var(--buttons-box-bg);
+    box-shadow: var(--buttons-box-shadow);
+}
+
+div.calculator-box input{  
+    color: var(--normal-text-color);  
+} 
+div.calculator-box  div.buttons-inner-box:first-of-type > div.operators-first-box { 
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.05);
+}
+div.calculator-box  div.buttons-inner-box:first-of-type > div.numbers-box { 
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.05);
+}
