@@ -14,7 +14,18 @@ class Calculator{
      } 
 
      replaceCharactersToCalculating = function(Equation){
-        return Equation.replace(/×/gi , "*").replace(/÷/gi , "/").replace("+/-" , "(-1)*").replace(/%/gi , "/100");
+        let tempString =  Equation.replace(/×/gi , "*").replace(/÷/gi , "/").replace("+/-" , "(-1)*").replace(/%/gi , "/100"),
+            filterdString = ""; 
+ 
+         const allowedCharackters = ["+" , "-" , "*" , "/" , "(" , ")" , "."]; 
+         for(let i=0;i<tempString.length;i++){
+             let currentChar = tempString[i];
+             if(!isNaN(currentChar) || allowedCharackters.indexOf(currentChar) > -1){
+                 filterdString += currentChar;
+                 continue;
+             } 
+         }  
+         return filterdString;
      }
  
      appendToHistory = function(Equation , EquationAnswer){ 
