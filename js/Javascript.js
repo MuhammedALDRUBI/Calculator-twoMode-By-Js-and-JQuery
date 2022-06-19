@@ -42,10 +42,10 @@ let    calculatorBox = $("#calculatorBox") ,
                 getResultOnEvent();
             }
         });
-
+  
        //eqiual btn code
        EquialOperatorinput.click(function(){
-           if(resultOfStatmentInput.val() != ""){ 
+           if(resultOfStatmentInput.val() != ""){  
                 getResultOnEvent();
            }
        });  
