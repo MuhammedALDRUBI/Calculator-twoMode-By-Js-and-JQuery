@@ -1,0 +1,222 @@
+/*global customization - start of part*/
+*{
+    box-sizing: border-box;
+}
+div.calculator-box{ 
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+}
+ 
+/*global customization - end of part*/
+
+div.calculator-box{
+    width:300px;
+    height:550px;
+    margin:20px auto; 
+    overflow: hidden;
+    position: relative; 
+    border-radius:40px;
+}
+
+div.calculator-box:after{
+    content:"";
+    display: block;
+    position: absolute;
+    left:50%;
+    bottom:5px;
+    width:50%;
+    height:3px;
+    transform: translateX(-50%);
+    border-radius:3px;
+}
+/* mode part */
+div.calculator-box div.mode-buttons-box{
+    width:30%;
+    height:35px; 
+    position: absolute;
+    top:52px;
+    left:50%;  
+    transform: translateX(-50%);
+    border-radius: 40px;
+    overflow: hidden;
+}
+div.calculator-box div.mode-buttons-box span{ 
+    position:absolute;  
+    top:0;
+    height:100%;  
+    display: flex; 
+    align-items: center;
+    cursor:pointer;
+    min-width:60%;
+    max-width:60%;
+}
+div.calculator-box div.mode-buttons-box span svg{ 
+    width:100%;
+}
+div.calculator-box div.mode-buttons-box span.light-mode{ 
+    left:0; 
+}
+div.calculator-box div.mode-buttons-box span.dark-mode{ 
+    right:0;
+} 
+div.calculator-box div.mode-buttons-box span.dark-mode:not(.active){
+    padding-left :12px;
+    justify-content: center;
+}
+div.calculator-box div.mode-buttons-box span.light-mode:not(.active){
+    padding-right:12px;
+    justify-content: flex-start;
+}
+div.calculator-box div.mode-buttons-box span.active{ 
+    border-radius:40px;
+    z-index: 5;
+}
+
+div.calculator-box div.mode-buttons-box span:not(.active){  
+    z-index: 4;  
+}
+
+/* history part */
+div.calculator-box div.history { 
+    position: absolute;
+    top:2.5%;
+    left:2.5%;
+    transition:.5s transform ease-in-out;
+    width:95%;
+    height:35%;  
+    border-radius:40px;
+} 
+div.calculator-box div.history.visible{ 
+    transform: translateX(0);
+}
+div.calculator-box div.history.hidden{ 
+    transform: translateX(105%);
+}
+div.calculator-box div.history > span.historyIcon{
+    width:30px;
+    height:30px;
+    position: absolute;
+    z-index: 3;
+    top:59px;
+    left:-50px;
+    cursor:pointer;
+} 
+div.calculator-box div.history > span.closeSpan{
+    width:30px;
+    height:30px;
+    position: absolute;
+    z-index: 3;
+    top:20px;
+    right:10px;
+    cursor:pointer;
+} 
+
+div.calculator-box div.history >  h2{  
+    margin:10%;
+}
+div.calculator-box div.history > div.history-box{
+    width:80%;
+    height:80%;
+    margin:0 auto;
+}
+div.calculator-box div.history > div.history-box div.Equation-history-row{  
+    padding:5px 10px;
+    margin:10px auto;
+    cursor:pointer;
+}
+div.calculator-box div.history > div.history-box div.Equation-history-row p{
+    margin:0;
+}
+/* result box part */
+div.calculator-box div.result-box{
+    height:40%;
+    padding:34px 34px 10px;
+    display: flex;
+    align-content: flex-end;
+    flex-wrap: wrap;
+}
+div.calculator-box div.result-box > div{
+    width:100%;
+    text-align: end; 
+} 
+
+div.calculator-box div.result-box > div.second-row{
+    display: flex;
+    justify-content: space-between;
+    padding:10px 0;
+}
+div.calculator-box div.result-box > div.second-row span{
+    width:10%;
+    display: flex;
+    align-items: center;
+}
+div.calculator-box div.result-box > div.second-row input{
+    height:100%; 
+    width:90%;
+    background-color: transparent;
+    cursor: text; 
+    text-align: end;  
+    font-size:22px
+}
+div.calculator-box  div.buttons-box{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    font-size: 26px;
+    height:60%; 
+    padding:15px;
+    border-radius: 25px; 
+}
+
+div.calculator-box input{ 
+    font-size: 18px;
+    cursor:pointer;    
+    outline: none;
+    border:none;
+}
+div.calculator-box  div.buttons-inner-box:first-of-type{
+    width:65%;
+}
+div.calculator-box  div.buttons-inner-box:first-of-type > div.row{ 
+    display: flex;
+    justify-content: space-around; 
+    width:100%;
+}
+div.calculator-box  div.buttons-inner-box:first-of-type  input{   
+    margin:5px auto; 
+    width:30%; 
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+div.calculator-box  div.buttons-inner-box:first-of-type > div.operators-first-box {  
+    border-radius: 40px; 
+}
+div.calculator-box  div.buttons-inner-box:first-of-type > div.operators-first-box input{ 
+    height:35px;
+}
+div.calculator-box  div.buttons-inner-box:first-of-type > div.numbers-box { 
+    border-radius: 40px;
+    padding:10px;
+}
+
+div.calculator-box  div.buttons-inner-box:first-of-type > div.numbers-box input{  
+    border-radius:50%;   
+    height:50px;
+}
+div.calculator-box  div.buttons-inner-box:last-of-type{
+    width:20%;
+}
+div.calculator-box  div.buttons-inner-box:last-of-type > div.operators-last-box{
+    height:100%;
+    border-radius: 40px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+}
+div.calculator-box  div.buttons-inner-box:last-of-type > div.operators-last-box input{
+     width:80%
+}
