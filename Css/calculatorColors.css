@@ -73,7 +73,9 @@ div.calculator-box div.history > h2{
 div.calculator-box div.history > div.history-box div.Equation-history-row{ 
     background-color:#333; 
 }
-
+div.calculator-box div.history > div.history-box div.Equation-history-row p{ 
+    color:#fff
+}
 /* result box part */
 div.calculator-box div.result-box > div.first-row{
     color:var(--disabled-text-color)
