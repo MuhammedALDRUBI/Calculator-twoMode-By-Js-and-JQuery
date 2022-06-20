@@ -14,20 +14,24 @@ class Calculator{
      } 
 
      replaceCharactersToCalculating = function(Equation){
-        let tempString =  Equation.replace(/×/gi , "*").replace(/÷/gi , "/").replace("+/-" , "(-1)*").replace(/%/gi , "/100"),
-            filterdString = ""; 
- 
-         const allowedCharackters = ["+" , "-" , "*" , "/" , "(" , ")" , "."]; 
-         for(let i=0;i<tempString.length;i++){
-             let currentChar = tempString[i];
-             if(!isNaN(currentChar) || allowedCharackters.indexOf(currentChar) > -1){
-                 filterdString += currentChar;
-                 continue;
-             } 
-         }  
-         return filterdString;
+        this.addFilterToStringPrototype();
+        return Equation.replace(/×/gi , "*").replace(/÷/gi , "/").replace("+/-" , "(-1)*").replace(/%/gi , "/100").filterForCalculating();  
      }
  
+     addFilterToStringPrototype = function(){
+        String.prototype.filterForCalculating = function(){
+            const allowedCharackters = ["+" , "-" , "*" , "/" , "(" , ")" , "."]; 
+            let filterdString = ""; 
+            for(let i=0;i<this.length;i++){
+                let currentChar = this[i];
+                if(!isNaN(currentChar) || allowedCharackters.indexOf(currentChar) > -1){
+                    filterdString += currentChar;
+                    continue;
+                } 
+            }  
+            return filterdString;
+        }
+     }
      appendToHistory = function(Equation , EquationAnswer){ 
          if(this.history.length < 3){ 
             this.history.push({Equation : Equation , EquationAnswer : EquationAnswer});
